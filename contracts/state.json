@@ -1,0 +1,13 @@
+{
+  "stargaze": {
+    "elgafar-1": {
+      "code_ids": {
+        "campaign": 4542,
+        "campaign_index": 4541
+      },
+      "default": {
+        "campaign_index": "stars1fv0ypylun6ltm29qzz2470z2eu8mae6v2n3aecfujyeefm6dulwq2q6u0x"
+      }
+    }
+  }
+}

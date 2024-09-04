@@ -1,0 +1,19 @@
+[package]
+name = "utils"
+version = { workspace = true }
+authors = ["Kaka Labs <kakalabs@gmail.com>"]
+description = "Utility functions used by Zupersale contracts"
+edition = { workspace = true }
+
+[features]
+[dependencies]
+cosmwasm-std = { workspace = true, features = [
+    "stargate",
+    "staking",
+    # "cosmwasm_1_4",
+] }
+cosmwasm-schema = { workspace = true }
+cw-storage-plus = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }

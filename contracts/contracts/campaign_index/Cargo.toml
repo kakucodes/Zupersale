@@ -1,0 +1,56 @@
+[package]
+name = "campaign-index"
+authors = ["Kaka Labs <kakalabs@gmail.com>"]
+version = { workspace = true }
+edition = { workspace = true }
+description = "Zupersale Campaign Index contract"
+
+exclude = [
+    # Those files are rust-optimizer artifacts. You might want to commit them for convenience but they should not be part of the source code publication.
+    "contract.wasm",
+    "hash.txt",
+]
+
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = 'abort'
+incremental = false
+overflow-checks = true
+
+[features]
+# for more explicit tests, cargo test --features=backtraces
+backtraces = ["cosmwasm-std/backtraces"]
+# use library feature to disable all instantiate/execute/query exports
+library = []
+
+
+[dependencies]
+cosmwasm-schema = { workspace = true }
+cosmwasm-std = { workspace = true, features = [
+    "stargate",
+    # "staking",
+    # "cosmwasm_1_4",
+] }
+cosmwasm-storage = { workspace = true, features = ["iterator"] }
+cw-storage-plus = { workspace = true }
+cw2 = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+semver = { workspace = true }
+cw-orch = { workspace = true }
+campaign = { workspace = true, features = ["library"] }
+cw-utils = { workspace = true }
+sha2 = "0.10.8"
+
+[dev-dependencies]
+cw-multi-test = { workspace = true }

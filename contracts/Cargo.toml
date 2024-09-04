@@ -1,0 +1,42 @@
+[workspace]
+members = ["packages/*", "contracts/*"]
+resolver = "2"
+
+
+[workspace.package]
+version = "0.2.2"
+edition = "2021"
+authors = ["Kaka Labs <kakalabs@gmail.com>"]
+repository = "https://github.com/kaka-labs/zupersale"
+
+
+[workspace.dependencies]
+cosmwasm-schema = "1.5.5"
+cosmwasm-std = { version = "1.5.7", default-features = false, features = [
+    # "stargate",
+    # "staking",
+    # "cosmwasm_1_4",
+] }
+cosmwasm-storage = "1.5.2"
+cw-orch = { version = "0.24", features = ["daemon"] }
+cw-storage-plus = "1.2.0"
+cw-multi-test = "0.20.0"
+
+cw2 = "1.0.1"
+schemars = "0.8.10"
+serde = { version = "1.0.197", default-features = false, features = ["derive"] }
+thiserror = { version = "1.0.31" }
+semver = "1"
+campaign = { path = "./contracts/campaign" }
+campaign-index = { path = "./contracts/campaign_index" }
+cw-utils = "1.0.1"
+
+[profile.release]
+rpath = false
+lto = true
+overflow-checks = true
+opt-level = 3
+debug = false
+debug-assertions = false
+codegen-units = 1
+incremental = false

@@ -1,0 +1,29 @@
+[package]
+name = "deploy"
+version = "0.1.0"
+edition = "2021"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# cw-orch = { git = "https://github.com/AbstractSDK/cw-orchestrator.git", branch = "feature/starship", features = [
+#     "interchain",
+#     "starship",
+# ] }
+cw-orch = { workspace = true }
+
+tokio = "1.31.0"
+cosmwasm-std = { workspace = true }
+cosmrs = "0.14.0"
+anybuf = "0.1.0"
+# [dev-dependencies]
+# Deps for deployment
+dotenv = { version = "0.15.0" }                              # Enables loading of .env files
+env_logger = { version = "0.10.0" }                          # Enables logging to stdout
+campaign-index = { path = "../../contracts/campaign_index" }
+campaign = { path = "../../contracts/campaign" }
+
+[[bin]]
+name = "deploy"
+path = "src/deploy.rs"
