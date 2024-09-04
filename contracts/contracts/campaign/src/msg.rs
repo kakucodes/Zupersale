@@ -86,9 +86,9 @@ pub enum DonorRange {
 
 #[cw_serde]
 pub enum Reward {
-    OneOfOneNftAirdrop,
-    NftAirdrop,
-    WhitelistSpot,
+    OneOfOneNftAirdrop {},
+    NftAirdrop {},
+    WhitelistSpot {},
     // MintShare {
     //     percentage: Decimal,
     //     until: Timestamp,
@@ -101,6 +101,8 @@ pub enum Reward {
         token_to_airdrop: Coin,
         distribution_type: TokenAirdropDistributionType,
     },
+    // NFTDistribution {
+    //}
 }
 
 #[cw_serde]

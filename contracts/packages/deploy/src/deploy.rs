@@ -107,21 +107,21 @@ pub fn main() -> anyhow::Result<()> {
                             from_position: 1,
                             to_position: 10,
                         },
-                        Reward::NftAirdrop,
+                        Reward::NftAirdrop {},
                     ),
                     (
                         IncentiveCriteria::FirstDonors {
                             count: 20,
                             min_donation: 10_000_000u64.into(),
                         },
-                        Reward::NftAirdrop,
+                        Reward::NftAirdrop {},
                     ),
                     (
                         IncentiveCriteria::PercentTokensDonated {
                             from_percent: Decimal::percent(0),
                             to_percent: Decimal::percent(100),
                         },
-                        Reward::WhitelistSpot,
+                        Reward::WhitelistSpot {},
                     ),
                 ],
             },
