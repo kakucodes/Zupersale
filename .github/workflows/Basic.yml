@@ -5,9 +5,8 @@ on: [push, pull_request]
 name: Basic
 
 jobs:
-
   test:
-    name: Test Suite
+    name: Rust Test Suite
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
@@ -38,7 +37,7 @@ jobs:
           RUSTFLAGS: "-C link-arg=-s"
 
   lints:
-    name: Lints
+    name: Rust Lints
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources

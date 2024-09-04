@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "install": "graz generate -g",
-    "codegen": "ts-node codegen.ts"
+    "codegen:index": "cargo run --bin campaign_index_schema --manifest-path ../contracts/Cargo.toml && cp ./schema/campaign-index.json ./schemas/zuper-index/",
+    "codegen:campaign": "cargo run --bin campaign_schema --manifest-path ../contracts/Cargo.toml && cp ./schema/campaign.json ./schemas/zuper-campaign/",
+    "codegen": "rm -rf ./schema/; npm run codegen:index && npm run codegen:campaign && ts-node ./codegen.ts && rm -rf ./schema/"
   },
   "dependencies": {
     "@cosmjs/cosmwasm-stargate": "^0.32.4",
