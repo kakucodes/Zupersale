@@ -49,6 +49,40 @@ const RewardButtons = [
     Token
   </ToggleButton>,
 ];
+
+const CriteriaLabel = [
+  {
+    label: "First Donations",
+    value: "1",
+  },
+  {
+    label: "Biggest Donations",
+    value: "2",
+  },
+  {
+    label: "Percent Donations",
+    value: "2",
+  },
+];
+
+// const RewardLabel = [
+//   {
+//     label: "1 of 1 NFT",
+//     value: "1",
+//   },
+//   {
+//     label: " NFT Airdrop",
+//     value: "2",
+//   },
+//   {
+//     label: "Whitelist",
+//     value: "2",
+//   },
+//   {
+//     label: "Token",
+//     value: "2",
+//   },
+// ];
 const IncentiveForm = ({ name, label, control }: IncentiveFormProps) => {
   const [openIncentiveModal, setOpenIncentiveModal] = useState(false);
   return (
@@ -63,7 +97,12 @@ const IncentiveForm = ({ name, label, control }: IncentiveFormProps) => {
         <Stack sx={{ display: "flex", flexDirection: "column" }}>
           <Box paddingBottom={2} display="flex" justifyContent="space-between">
             <Typography>{label}*</Typography>
-            <Button onClick={() => setOpenIncentiveModal(true)}>+ Add</Button>
+            <Button
+              variant="outlined"
+              onClick={() => setOpenIncentiveModal(true)}
+            >
+              + Add
+            </Button>
             <Dialog
               fullWidth
               open={openIncentiveModal}
@@ -78,18 +117,29 @@ const IncentiveForm = ({ name, label, control }: IncentiveFormProps) => {
                     <Typography variant="h6">Add Incentive</Typography>
                     <Typography variant="body2">
                       Choose your desired incentive criteria and its reward here
-                      and edit in the next step.
+                      and edit detailed reward option in the next step.
                     </Typography>
                   </Stack>
                   <Box
                     display="flex"
                     flexDirection="row"
-                    justifyContent="space-evenly"
+                    justifyContent="space-between"
                   >
                     <Stack gap={2}>
                       <Typography>Choose incentive criteria</Typography>
-                      <ToggleButtonGroup orientation="vertical">
-                        {CriteriaButtons}
+                      <ToggleButtonGroup
+                        orientation="vertical"
+                        color="primary"
+                        value={value}
+                        exclusive
+                      >
+                        {CriteriaLabel.map(({ label, value }) => {
+                          return (
+                            <ToggleButton key={label} value={value}>
+                              {label}
+                            </ToggleButton>
+                          );
+                        })}
                       </ToggleButtonGroup>
                     </Stack>
                     <Typography alignContent="center">Receives</Typography>
@@ -100,7 +150,7 @@ const IncentiveForm = ({ name, label, control }: IncentiveFormProps) => {
                       </ToggleButtonGroup>
                     </Stack>
                   </Box>
-                  <Button>Add</Button>
+                  <Button variant="contained">Add</Button>
                 </Stack>
               </DialogContent>
             </Dialog>
