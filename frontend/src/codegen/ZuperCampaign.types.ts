@@ -32,7 +32,14 @@ export type IncentiveCriteria = {
   };
 };
 export type Decimal = string;
-export type Reward = "one_of_one_nft_airdrop" | "nft_airdrop" | "whitelist_spot";
+export type Reward = ("one_of_one_nft_airdrop" | "nft_airdrop" | "whitelist_spot") | {
+  token_distribution: {
+    distribution_type: TokenAirdropDistributionType;
+    token_to_airdrop: Coin;
+  };
+};
+export type TokenAirdropDistributionType = "equal" | "proportional";
+export type Uint128 = string;
 export interface InstantiateMsg {
   campaign_metadata: CampaignMetadata;
   protocol_settings: ProtocolInstantiateSettings;
@@ -47,6 +54,11 @@ export interface CampaignMetadata {
   owner: string;
   start_timestamp: Timestamp;
   test_campaign: boolean;
+}
+export interface Coin {
+  amount: Uint128;
+  denom: string;
+  [k: string]: unknown;
 }
 export interface ProtocolInstantiateSettings {
   fee_address: string;
@@ -99,13 +111,7 @@ export interface ValidatedCampaignMetadata {
   withdrawl_fee: Decimal;
 }
 export type CampaignStatus = "active" | "funding_closed" | "completed" | "expired" | "cancelled";
-export type Uint128 = string;
 export type ArrayOfTupleOfAddrAndCoin = [Addr, Coin][];
-export interface Coin {
-  amount: Uint128;
-  denom: string;
-  [k: string]: unknown;
-}
 export type ArrayOfTupleOfAddrAndCoinAndTimestamp = [Addr, Coin, Timestamp][];
 export interface UserDonationsResponse {
   donations: [Uint64, Timestamp][];

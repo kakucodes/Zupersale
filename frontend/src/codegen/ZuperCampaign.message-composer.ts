@@ -7,7 +7,7 @@
 import { MsgExecuteContractEncodeObject } from "@cosmjs/cosmwasm-stargate";
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@cosmjs/encoding";
-import { Timestamp, Uint64, IncentiveCriteria, Decimal, Reward, InstantiateMsg, CampaignMetadata, ProtocolInstantiateSettings, ExecuteMsg, QueryMsg, Addr, ValidatedCampaignMetadata, CampaignStatus, Uint128, ArrayOfTupleOfAddrAndCoin, Coin, ArrayOfTupleOfAddrAndCoinAndTimestamp, UserDonationsResponse } from "./ZuperCampaign.types";
+import { Timestamp, Uint64, IncentiveCriteria, Decimal, Reward, TokenAirdropDistributionType, Uint128, InstantiateMsg, CampaignMetadata, Coin, ProtocolInstantiateSettings, ExecuteMsg, QueryMsg, Addr, ValidatedCampaignMetadata, CampaignStatus, ArrayOfTupleOfAddrAndCoin, ArrayOfTupleOfAddrAndCoinAndTimestamp, UserDonationsResponse } from "./ZuperCampaign.types";
 export interface ZuperCampaignMsg {
   contractAddress: string;
   sender: string;

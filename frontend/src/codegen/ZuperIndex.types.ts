@@ -76,7 +76,13 @@ export type IncentiveCriteria = {
     percentage: Decimal;
   };
 };
-export type Reward = "one_of_one_nft_airdrop" | "nft_airdrop" | "whitelist_spot";
+export type Reward = ("one_of_one_nft_airdrop" | "nft_airdrop" | "whitelist_spot") | {
+  token_distribution: {
+    distribution_type: TokenAirdropDistributionType;
+    token_to_airdrop: Coin;
+  };
+};
+export type TokenAirdropDistributionType = "equal" | "proportional";
 export interface CampaignMetadata {
   accepted_denom: string;
   description: string;

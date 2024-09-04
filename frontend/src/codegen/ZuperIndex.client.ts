@@ -6,7 +6,7 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { StdFee } from "@cosmjs/amino";
-import { Decimal, Uint128, InstantiateMsg, Coin, ExecuteMsg, Uint64, Binary, Timestamp, IncentiveCriteria, Reward, CampaignMetadata, QueryMsg, CampaignStatus, CampaignType, Addr, ArrayOfCampaignsResponse, CampaignsResponse, ValidatedCampaignMetadata, ArrayOfWhitelistEntry, WhitelistEntry, IndexSettings } from "./ZuperIndex.types";
+import { Decimal, Uint128, InstantiateMsg, Coin, ExecuteMsg, Uint64, Binary, Timestamp, IncentiveCriteria, Reward, TokenAirdropDistributionType, CampaignMetadata, QueryMsg, CampaignStatus, CampaignType, Addr, ArrayOfCampaignsResponse, CampaignsResponse, ValidatedCampaignMetadata, ArrayOfWhitelistEntry, WhitelistEntry, IndexSettings } from "./ZuperIndex.types";
 export interface ZuperIndexReadOnlyInterface {
   contractAddress: string;
   creatorWhitelist: ({
