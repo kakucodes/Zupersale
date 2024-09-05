@@ -457,12 +457,43 @@
       "Reward": {
         "oneOf": [
           {
-            "type": "string",
-            "enum": [
-              "one_of_one_nft_airdrop",
-              "nft_airdrop",
+            "type": "object",
+            "required": [
+              "one_of_one_nft_airdrop"
+            ],
+            "properties": {
+              "one_of_one_nft_airdrop": {
+                "type": "object",
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "required": [
+              "nft_airdrop"
+            ],
+            "properties": {
+              "nft_airdrop": {
+                "type": "object",
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "required": [
               "whitelist_spot"
-            ]
+            ],
+            "properties": {
+              "whitelist_spot": {
+                "type": "object",
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
           },
           {
             "type": "object",
@@ -889,12 +920,43 @@
         "Reward": {
           "oneOf": [
             {
-              "type": "string",
-              "enum": [
-                "one_of_one_nft_airdrop",
-                "nft_airdrop",
+              "type": "object",
+              "required": [
+                "one_of_one_nft_airdrop"
+              ],
+              "properties": {
+                "one_of_one_nft_airdrop": {
+                  "type": "object",
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "nft_airdrop"
+              ],
+              "properties": {
+                "nft_airdrop": {
+                  "type": "object",
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
                 "whitelist_spot"
-              ]
+              ],
+              "properties": {
+                "whitelist_spot": {
+                  "type": "object",
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
             },
             {
               "type": "object",

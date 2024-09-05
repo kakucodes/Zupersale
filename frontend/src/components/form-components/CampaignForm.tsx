@@ -94,9 +94,11 @@ const CampaignForm = () => {
               control={control}
             />
             <IncentiveForm
-              name="incentives"
+              rewardName="reward"
+              incentiveName="incentive"
               label="Campaign Incentives"
-              control={control}
+              rewardControl={control}
+              incentiveControl={control}
             />
             <FormInputCheckbox
               name="is_nsfw"
